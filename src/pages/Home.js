@@ -9,22 +9,24 @@ const Home = () => {
   const usernameRef = useRef()
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(usernameRef)
+    const data = new FormData(e.target)
+    console.log(Object.fromEntries(data.entries()))
   }
   return (
     <form onSubmit={handleSubmit}>
     <FormInput 
     placeholder="User Name"
-    // onChange={username}
-
-    refer={usernameRef}
+    // refer={usernameRef}
+    name="username"
     />
-    <FormInput placeholder="Email"/>
-    <FormInput placeholder="Full Name"/>
-    <FormInput placeholder="Strain"/>
+
+    <FormInput placeholder="Email" name="email"/>
+    <FormInput placeholder="Full Name" name="fullname"/>
+    <FormInput placeholder="Strain" name="strain"/>
     <button>Submit</button>
     </form>
   )
 }
 
 export default Home
+onkeydown
